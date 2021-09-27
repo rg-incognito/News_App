@@ -8,17 +8,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class NewsListAdapter( private val listner : NewsItemClicked) : RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>() {
+class NewsListAdapter( private val listner : NewsItemClicked, itemsarray: ArrayList<News> )
+    : RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>(
+
+    ) {
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleView : TextView = itemView.findViewById(R.id.title)
         val image : ImageView = itemView.findViewById(R.id.image)
         val author : TextView = itemView.findViewById(R.id.author)
 
+
     }
-    val items : ArrayList<News> = ArrayList()
-
-
-
+    val items : ArrayList<News> =itemsarray
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news,parent,false)
@@ -45,7 +46,6 @@ class NewsListAdapter( private val listner : NewsItemClicked) : RecyclerView.Ada
     fun updateNews(UpdatedNews : ArrayList<News>){
         items.clear()
         items.addAll(UpdatedNews)
-        notifyDataSetChanged()
     }
 
 }

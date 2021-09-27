@@ -1,6 +1,5 @@
 package com.example.newsapp
 
-import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,8 +18,7 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
         setContentView(R.layout.activity_main)
         recycler.layoutManager = LinearLayoutManager(this)
         fetch()
-        mAdapter = NewsListAdapter(this)
-        recycler.adapter = mAdapter
+
 
 
         
@@ -51,10 +49,12 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
 
                     )
                     newsArray.add(news)
+                    mAdapter = NewsListAdapter(this,newsArray)
+                    recycler.adapter = mAdapter
                     Log.d("Hii", "fetch: $news")
 
                 }
-                mAdapter.updateNews(newsArray)
+
 
 
             }, {
