@@ -1,4 +1,5 @@
 # News_App
-<figure class="video_container">
-  <iframe src="https://drive.google.com/file/d/1bv_bgtDe1ONHclLq4v9H0JmxwhJkUFqm/view?usp=sharing" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+
+
+https://user-images.githubusercontent.com/112975781/189903249-1a4a93cf-3131-4dcb-85eb-58db1613b526.mp4
+
